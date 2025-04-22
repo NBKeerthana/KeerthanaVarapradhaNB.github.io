@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog Drools 1 - Pets' Park</title>
+  <style>
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar {
+      width: 720px;
+      height: 30px;
+      font-size: 16px;
+      padding: 5px;
+      margin-left: 80px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: #ffd6d4;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .logo {
+      margin-left: 100px;
+    }
+
+    .login-btn {
+      background-color: #ffd6d4;
+      color: white;
+      font-size: 16px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #ed1e24;
+    }
+
+    a:link {
+      text-decoration: none;
+      color: red;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: black;
+    }
+
+    a:active {
+      text-decoration: underline;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      text-decoration: none;
+      color: black;
+      display: block;
+      padding: 5px 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    a.logo {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      width: 900px;
+      height: 500px;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      display: flex;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .quantity-container {
+      width: 200px;
+      height: 150px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quantity-input {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .collapsible {
+      background-color: #ffd6d4;
+      color: black;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .icon {
+      float: right;
+    }
+
+    .content {
+      padding: 10px;
+      display: none;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    .add-to-cart-btn {
+      background-color: #ed1e24;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #c4161a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <a href="Pets ParkOriginal.html">
+      <embed type="image/png" src="Logo.png" class="logo" width="150" height="150">
+    </a>
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search by pet, breed, product...">
+      <img src="search.png" alt="Search" class="search-icon">
+    </div>
+  </div>
+
+   <div class="menu">
+	<p><b><a href = "Our Services.html" target="_blank" class="logo">Our Services</a></b></p>
+
+	<div class="dropdown">
+		<p><b>Shop by Breed</b></p>
+		<div class="dropdown-content">
+			<a href = "Dog Food.html">Dog Food</a>
+			<a href="Dog Treat.html">Dog Treats, biscuits and chews</a>
+			<a href="Dog Collars.html">Dog Collars, leashes, & harnesses</a>
+			<a href="Dog Health.html">Dog Health Care</a>
+			<a href="Dog Grooming.html">Dog Grooming</a>
+			<a href="Dog Toys.html">Dog Toys</a>
+			<a href="Dog Accessories.html">Dog Accessories</a>
+			<a href="Dog Hygiene.html">Dog Hygiene</a>			
+			<a href="Cat Food.html">Cat food</a>
+			<a href="Cat Treats.html">Cat Treats</a>
+			<a href="Cat Collars.html">Cat collars, leashes & Harnesses</a>
+			<a href="Cat Toys.html">Cat Toys</a>
+			<a href="Cat Grooming.html">Cat grooming</a>
+			<a href="Cat Accessories.html">Cat Accessories</a>
+			<a href="Cat Hygiene.html">Cat Hygiene</a>
+
+
+		</div>
+	</div> 
+
+	<div class="dropdown">
+		<p><b>Shop by Brand</b></p>
+		<div class="dropdown-content">
+			<a href = "Pedigree.html">Pedigree</a>
+			<a href="RC.html">Royal Canin</a>
+			<a href="Drools.html">Drools</a>
+			<a href="Farmina.html">Farmina</a>
+			<a href="Whiskas.html">Whiskas</a>
+			<a href="Meo.html">Me-O</a>
+			<a href="MPets.html">M-Pets</a>
+		</div>
+	</div>    
+	<div class="dropdown">
+        	<p><b>Shop By Medicine </b></p>
+        	<div class="dropdown-content" >
+            		<div>
+                		<strong>Digestive Care</strong>
+                		<a href="DCS.html">Syrup</a>
+                		<a href="DCF.html">Feed</a>
+            		</div>
+            	<div>
+                	<strong>Eye & Ear Care</strong>
+                	<a href="EECS.html">Syrup</a>
+                	<a href="EECD.html">Drops</a>
+            	</div>
+		<div>
+                	<strong>Skin Care</strong>
+                	<a href="SCS.html">Syrup</a>
+                	<a href="SCO.html">Ointment</a>
+
+            	</div>
+		<div>
+                	<strong>Wound Care</strong>
+                	<a href="WCS.html">Syrup</a>
+                	<a href="WCO.html">Ointment</a>
+			<a href="WCT.html">Tablet</a>
+                </div>
+        </div>
+    </div>
+    <a href="BookAppointment.html" class="login-btn">Book Appointment</a>
+</div>
+</div>
+
+
+  <h3 class="logo">
+    <a href="Pets ParkOriginal.html">Home</a> /
+    <a href="Dog Drools.html">Dog Drools</a> /
+    <a href="Dog Drools1.html">Drools Vet Pro Urinary Tract Dry Food for Cats 1.2Kg</a>
+  </h3>
+
+  <h1 class="h1">PRODUCT DETAILS</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="Dog Drools1.png" alt="">
+      <div class="card-content">
+        <h2>Drools Vet Pro Urinary Tract Dry Food for Cats 1.2Kg</h2><br><br>
+        <img src="rdrools1.png" alt="Rs. 653" width="400" height="300">
+      </div>
+    </div>
+
+    <div class="quantity-container">
+      <p class="quantity-title">Quantity</p>
+      <input type="number" id="qty" min="1" max="10" value="1" class="quantity-input">
+      <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <button class="collapsible" onclick="toggleSection('content1', 'icon1')">
+    PRODUCT DESCRIPTION <span id="icon1" class="icon">+</span>
+  </button>
+
+  <div id="content1" class="content">
+        <p>Drools Vet Pro Urinary Tract Dry Food for Cats is a specialized diet formulated to support feline urinary health. Excess minerals in a cat's diet can lead to the formation of urinary crystals and stones, causing discomfort and potential health issues. This food aims to maintain an optimal urinary pH and reduce the risk of such problems.</p>
+</div>
+
+  <script>
+    function toggleSection(id, iconId) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById(iconId);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        icon.textContent = "+";
+      } else {
+        content.style.display = "block";
+        icon.textContent = "-";
+      }
+    }
+
+    function addToCart() {
+      const product = {
+        title: "Whiskas Chicken With Salmon Wakame Seaweed in Gravy Cat Wet Food 70g (Pack of 6)",
+        price: "₹653",
+        imgSrc: "whiskas3.png",
+        quantity: document.getElementById("qty").value
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Item added to cart!");
+    }
+  </script>
+</body>
+</html>
