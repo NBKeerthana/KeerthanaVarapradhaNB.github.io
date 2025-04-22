@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pedigree 2 - Pets' Park</title>
+	<style>
+		.header{
+		    display: flex;
+		    align-items: center;
+		    gap: 15px;
+		}
+		.search-container{
+		    position: relative;
+		    display: flex;
+		    align-items: center;
+		}
+		.search-bar{
+		    width: 720px;
+		    height: 30px;
+		    font-size: 16px;
+		    padding: 5px;
+		    margin-left: 80px;
+		    border: 1px solid gray;
+		    border-radius: 5px;
+		    background-color: #ffd6d4;
+		}
+		.search-icon{
+		    position: absolute;
+		    right: 10px;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    width: 20px;
+		    height: 20px;
+		    cursor: pointer;
+		}
+		.logo{
+		    margin-left: 100px;
+		}
+		.login-btn{
+		    background-color: #ffd6d4;
+		    color: white;
+		    font-size: 16px;
+		    padding: 8px 15px;
+		    border: none;
+		    border-radius: 5px;
+		    cursor: pointer;
+		    margin-left: 20px;
+		    transition: 0.3s ease;
+		}
+		.login-btn:hover{
+		    background-color: #ed1e24;
+		}
+		a:link{
+		    text-decoration: none;
+		}
+		a:visited{
+		    text-decoration: none;
+		}
+		a:hover{
+		    text-decoration: underline;
+		}
+		a:active{
+		    text-decoration: underline;
+		}
+		.menu {
+    		    display: flex;
+		    justify-content: space-around;
+		    align-items: center;
+    		    width: 100%;
+    		    padding: 10px 0;
+		}
+		.menu .login-btn{
+		    margin-left: 10px;
+		}
+		.dropdown{
+		    position: relative;
+		    display: inline-block;
+		    margin-left: 20px;
+		}
+		.dropdown-content{
+		    display: none;
+		    position: absolute;
+		    background-color: #f9f9f9;
+		    min-width: 160px;
+		    box-shodow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+		    padding: 12px 16px;
+		    z-index: 1;
+		}
+		.dropdown-content a{
+		    text-decoration: none;
+		    color: black;
+		    display: block;
+		    padding: 5px 0;
+		}
+		.dropdown:hover .dropdown-content{
+		    display: block;
+		}
+		.dropdown-content a:hover{
+		    display: block;
+		}
+		.dropdown-content a:hover{
+		    background-color: #ddd;
+		}
+		a.logo{
+		    text-decoration: none;
+		    font-weight: bold;
+		    color: black;
+		}
+		.menu {
+    		   display: flex;
+    		   justify-content: space-evenly;
+    		   align-items: center;
+    		   text-align: center;
+		}
+
+		.menu p, .menu .login-btn {
+    		   margin: 0;  /* Removes unnecessary margins to keep alignment clean */
+		}
+		.center{
+			text-align: center;
+			color: red;
+		}
+		.h1{
+			margin-left: 100px;
+			color: red;
+		}
+		.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Aligns both sections properly */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 900px;
+    height: 500px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    display: flex;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0; /* Prevents it from shrinking */
+}
+
+.quantity-container {
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-shrink: 0; /* Prevents resizing */
+    align-self: flex-start; /* Aligns it at the top */
+}
+
+
+		.card-image {
+    			width: 60px; /* Adjust image size */
+    			height: auto;
+    			margin-right: 15px;
+		}
+		.card-content h2 {
+    			color: black;
+    			margin: 0;
+		}
+		.card-content p {
+    			margin: 5px 0 0;
+		}
+		.tab {
+            		background-color: lightpink;
+            		color: white;
+            		padding: 20px;
+            		font-size: 36px;
+            		margin-bottom: 20px;
+        	}
+		* {
+            		box-sizing: border-box;
+        	}
+        	body {
+            		font-family: Arial, sans-serif;
+            		background-color: #f8f9fa;
+            		padding: 20px;
+            		margin: 0;
+        	}
+        	.product-container {
+            		display: flex;
+            		gap: 20px;
+            		justify-content: center;
+        	}
+        	.product-card {
+            		width: 280px;
+            		background-color: white;
+            		border: 1px solid #ccc;
+            		border-radius: 10px;
+            		padding: 15px;
+            		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            		position: relative;
+            		text-align: center;
+        	}
+        	.discount-badge {
+            		position: absolute;
+            		top: 10px;
+            		right: 10px;
+            		background-color: #007bff;
+            		color: white;
+            		padding: 5px 10px;
+            		border-radius: 10px;
+            		font-size: 12px;
+        	}
+        	.product-card img {
+            		width: 100px;
+            		height: auto;
+            		margin: 10px 0;
+        	}
+        	.product-title {
+            		font-size: 16px;
+            		color: #333;
+            		margin: 10px 0;
+        	}
+        	.price {
+            		font-size: 18px;
+            		color: #333;
+            		font-weight: bold;
+        	}
+        	.mrp {
+            		text-decoration: line-through;
+            		color: #777;
+            		margin-left: 10px;
+            		font-size: 14px;
+        	}
+        	.pack-size {
+            		background-color: white;
+            		color: red;
+            		padding: 5px 10px;
+            		border-radius: 5px;
+            		font-size: 12px;
+            		margin-top: 10px;
+            		display: inline-block;
+        	}
+        	.product-button {
+            		display: block;
+            		width: 100%;
+            		padding: 10px;
+            		margin-top: 10px;
+            		border: none;
+            		border-radius: 5px;
+            		font-size: 14px;
+            		cursor: pointer;
+            		text-align: center;
+            		text-decoration: none;
+        	}
+        	.add-to-cart-btn {
+            		background-color: #e40046;
+            		color: white;
+        	}
+        	.notify-btn {
+            		background-color: #ffe6eb;
+            		color: #e40046;
+        	}
+		body {
+            		font-family: Arial, sans-serif;
+            		background-color: #f8f9fa;
+            		padding: 20px;
+        	}
+              	.quantity-title {
+            		font-size: 18px;
+            		font-weight: bold;
+            		color: #333;
+            		margin-bottom: 10px;
+        	}
+        	.pack-size {
+            		display: inline-block;
+            		padding: 5px 10px;
+            		border: 1px solid #007bff;
+            		color: #007bff;
+            		border-radius: 20px;
+            		font-size: 14px;
+            		margin-bottom: 15px;
+        	}
+        	.button-container {
+            		display: flex;
+            		flex-direction: column;
+            		gap: 10px;
+        	}
+        	.buy-now-btn {
+           		background-color: lightpink;
+            		color: white;
+            		border: none;
+            		padding: 10px;
+            		border-radius: 5px;
+            		font-size: 16px;
+            		cursor: pointer;
+        	}
+        	.add-to-cart-btn {
+            		background-color: white;
+            		color: #007bff;
+            		border: 1px solid #007bff;
+            		padding: 10px;
+            		border-radius: 5px;
+            		font-size: 16px;
+            		cursor: pointer;
+        	}
+		.collapsible {
+            background-color: lightpink;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content {
+            padding: 15px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+
+        .icon {
+            font-size: 20px;
+            font-weight: bold;
+        }
+	</style>
+</head>
+<body>
+   <div class="header">
+	<a href = "Pets ParkOriginal.html"><embed type = "image/png" src = "Logo.png" class = "logo" width = "150" height = "150"></a>
+	<div class = "search-container">
+		<input type = "text" class = "search-bar" placeholder = "Search by pet, breed, product...">
+		<img src = "search.png" alt = "Search" class="search-icon">
+	</div>
+
+	<a href = "Cart - Pets' Park.html"><img border="0" alt = "Cart" src = "cart.png" width ="100" height = "100"></a>
+
+	<a href = "Login.html" class = "login-btn">Sign Up/Login</a>
+
+   </div>
+
+   <div class="menu">
+	<p><b><a href = "Our Services.html" target="_blank" class="logo">Our Services</a></b></p>
+
+	<div class="dropdown">
+		<p><b>Shop by Breed</b></p>
+		<div class="dropdown-content">
+			<a href = "Dog Food.html">Dog Food</a>
+			<a href="Dog Treat.html">Dog Treats, biscuits and chews</a>
+			<a href="Dog Collars.html">Dog Collars, leashes, & harnesses</a>
+			<a href="Dog Health.html">Dog Health Care</a>
+			<a href="Dog Grooming.html">Dog Grooming</a>
+			<a href="Dog Toys.html">Dog Toys</a>
+			<a href="Dog Accessories.html">Dog Accessories</a>
+			<a href="Dog Hygiene.html">Dog Hygiene</a>			
+			<a href="Cat Food.html">Cat food</a>
+			<a href="Cat Treats.html">Cat Treats</a>
+			<a href="Cat Collars.html">Cat collars, leashes & Harnesses</a>
+			<a href="Cat Toys.html">Cat Toys</a>
+			<a href="Cat Grooming.html">Cat grooming</a>
+			<a href="Cat Accessories.html">Cat Accessories</a>
+			<a href="Cat Hygiene.html">Cat Hygiene</a>
+
+
+		</div>
+	</div> 
+
+	<div class="dropdown">
+		<p><b>Shop by Brand</b></p>
+		<div class="dropdown-content">
+			<a href = "Pedigree.html">Pedigree</a>
+			<a href="RC.html">Royal Canin</a>
+			<a href="Drools.html">Drools</a>
+			<a href="Farmina.html">Farmina</a>
+			<a href="Whiskas.html">Whiskas</a>
+			<a href="Meo.html">Me-O</a>
+			<a href="MPets.html">M-Pets</a>
+		</div>
+	</div>    
+	<div class="dropdown">
+        	<p><b>Shop By Medicine </b></p>
+        	<div class="dropdown-content" >
+            		<div>
+                		<strong>Digestive Care</strong>
+                		<a href="DCS.html">Syrup</a>
+                		<a href="DCF.html">Feed</a>
+            		</div>
+            	<div>
+                	<strong>Eye & Ear Care</strong>
+                	<a href="EECS.html">Syrup</a>
+                	<a href="EECD.html">Drops</a>
+            	</div>
+		<div>
+                	<strong>Skin Care</strong>
+                	<a href="SCS.html">Syrup</a>
+                	<a href="SCO.html">Ointment</a>
+
+            	</div>
+		<div>
+                	<strong>Wound Care</strong>
+                	<a href="WCS.html">Syrup</a>
+                	<a href="WCO.html">Ointment</a>
+			<a href="WCT.html">Tablet</a>
+                </div>
+        </div>
+    </div>
+    <a href="BookAppointment.html" class="login-btn">Book Appointment</a>
+</div>
+</div>
+
+
+<h3 class="logo"><a href = "Pets ParkOriginal.html">Home</a>/<a href = "Pedigree.html">Pedigree</a>/<a href = "Pedigree2.html">Pedigree Puppy Wet Dog Food with Chicken Chunks in Gravy 130g (Pack of 5)</a></h3>
+
+<h1 class="h1">PRODUCT DETAILS</h1> 
+
+<div class="card-container">
+    <div class="card">
+        <img src="Pedigree2.png" alt="Pedigree 2">
+        <div class="card-content">
+            <h2>Pedigree Puppy Wet Dog Food with Chicken Chunks in Gravy 130g (Pack of 5)</h2><br><br>
+            <img src="rpedigree2.png" alt = "Rs. 653" width = "400" height = "300">
+        </div>
+    </div>
+	<div class="quantity-container">
+        	<p class="quantity-title">Quantity</p>
+
+        	<div class="button-container">
+            		<button class="buy-now-btn">Buy Now</button>
+            		<button class="add-to-cart-btn">Add to Cart</button>
+        	</div>
+	</div>
+
+</div>
+
+
+
+
+<button class="collapsible" onclick="toggleSection('content1', 'icon1')">
+        PRODUCT DESCRIPTION
+        <span id="icon1" class="icon">+</span>
+    </button>
+    <div id="content1" class="content">
+        <p>​Pedigree Puppy Wet Dog Food with Chicken Chunks in Gravy is specially formulated to meet the nutritional needs of growing puppies. Each 130g pouch contains tender chicken chunks enveloped in a flavorful gravy, making mealtime both delicious and nourishing.</p>
+    </div><br><br>
+
+    <button class="collapsible" onclick="toggleSection('content2', 'icon2')">
+        PRODUCT FEATURES
+        <span id="icon2" class="icon">+</span>
+    </button>
+    <div id="content2" class="content">
+        <ul>
+            <li>High-Quality Protein: Real chicken pieces provide essential proteins that support healthy muscle development in puppies.</li>
+            <li>Balanced Nutrition: Fortified with vitamins and minerals to promote overall health, including strong bones and teeth.</li>
+            <li>DHA for Brain Development: Contains DHA, an omega-3 fatty acid crucial for cognitive development and learning abilities.</li>
+            <li>Easily Digestible: The gravy format ensures easy digestion, making it suitable for puppies with developing digestive systems.​</li>
+            <li>Hydration Support: The wet food's moisture content aids in keeping puppies hydrated, especially beneficial for those who may not drink sufficient water.</li>
+        </ul>
+    </div><br><br>
+
+    <script>
+        function toggleSection(contentId, iconId) {
+            let content = document.getElementById(contentId);
+            let icon = document.getElementById(iconId);
+            
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                icon.innerHTML = "+";
+            } else {
+                content.style.display = "block";
+                icon.innerHTML = "-";
+            }
+        }
+    </script>
+
+
+
+</body>	
+</html>
