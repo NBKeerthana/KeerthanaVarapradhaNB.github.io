@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About us - Pets' Park</title>
+	<style>
+		.header{
+		    display: flex;
+		    align-items: center;
+		    gap: 15px;
+		}
+		.search-container{
+		    position: relative;
+		    display: flex;
+		    align-items: center;
+		}
+		.search-bar{
+		    width: 720px;
+		    height: 30px;
+		    font-size: 16px;
+		    padding: 5px;
+		    margin-left: 80px;
+		    border: 1px solid gray;
+		    border-radius: 5px;
+		    background-color: #ffd6d4;
+		}
+		.search-icon{
+		    position: absolute;
+		    right: 10px;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    width: 20px;
+		    height: 20px;
+		    cursor: pointer;
+		}
+		.logo{
+		    margin-left: 100px;
+		}
+		.login-btn{
+		    background-color: #ffd6d4;
+		    color: white;
+		    font-size: 16px;
+		    padding: 8px 15px;
+		    border: none;
+		    border-radius: 5px;
+		    cursor: pointer;
+		    margin-left: 20px;
+		    transition: 0.3s ease;
+		}
+		.login-btn:hover{
+		    background-color: #ed1e24;
+		}
+		a:link{
+		    text-decoration: none;
+		}
+		a:visited{
+		    text-decoration: none;
+		}
+		a:hover{
+		    text-decoration: underline;
+		}
+		a:active{
+		    text-decoration: underline;
+		}
+		.menu {
+    		    display: flex;
+		    justify-content: space-around;
+		    align-items: center;
+    		    width: 100%;
+    		    padding: 10px 0;
+		}
+		.menu .login-btn{
+		    margin-left: 10px;
+		}
+		.dropdown{
+		    position: relative;
+		    display: inline-block;
+		    margin-left: 20px;
+		}
+		.dropdown-content{
+		    display: none;
+		    position: absolute;
+		    background-color: #f9f9f9;
+		    min-width: 160px;
+		    box-shodow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+		    padding: 12px 16px;
+		    z-index: 1;
+		}
+		.dropdown-content a{
+		    text-decoration: none;
+		    color: black;
+		    display: block;
+		    padding: 5px 0;
+		}
+		.dropdown:hover .dropdown-content{
+		    display: block;
+		}
+		.dropdown-content a:hover{
+		    display: block;
+		}
+		.dropdown-content a:hover{
+		    background-color: #ddd;
+		}
+		a.logo{
+		    text-decoration: none;
+		    font-weight: bold;
+		    color: black;
+		}
+		.menu {
+    		   display: flex;
+    		   justify-content: space-evenly;
+    		   align-items: center;
+    		   text-align: center;
+		}
+
+		.menu p, .menu .login-btn {
+    		   margin: 0;  /* Removes unnecessary margins to keep alignment clean */
+		}
+		.center{
+			text-align: center;
+			color: red;
+		}
+		.h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+   <div class="header">
+	<a href = "file:///C:/Users/NAGARAJAN/Desktop/AVV/Semester%202/23CSE113%20-%20User%20Interface%20Design/Project/Pets%20ParkOriginal.html"><embed type = "image/png" src = "Logo.png" class = "logo" width = "150" height = "150"></a>
+	<div class = "search-container">
+		<input type = "text" class = "search-bar" placeholder = "Search by pet, breed, product...">
+		<img src = "search.png" alt = "Search" class="search-icon">
+	</div>
+
+	<a href = "file:///C:/Users/NAGARAJAN/Desktop/AVV/Semester%202/23CSE113%20-%20User%20Interface%20Design/Project/PPDCart.html"><img border="0" alt = "Cart" src = "cart.png" width ="100" height = "100"></a>
+
+	<a href = "file:///C:/Users/NAGARAJAN/Desktop/AVV/Semester%202/23CSE113%20-%20User%20Interface%20Design/Project/PPDLogin.html" class = "login-btn">Sign Up/Login</a>
+
+   </div>
+
+   <div class="menu">
+	<p><b><a href = "file:///C:/Users/NAGARAJAN/Desktop/AVV/Semester%202/23CSE113%20-%20User%20Interface%20Design/Project/Our%20Services.html" target="_blank" class="logo">Our Services</a></b></p>
+
+	<div class="dropdown">
+		<p><b>Shop by Breed</b></p>
+		<div class="dropdown-content">
+			<a href = "Dog Food.html">Dog Food</a>
+			<a href="Dog Treat.html">Dog Treats, biscuits and chews</a>
+			<a href="Dog Collars.html">Dog Collars, leashes, & harnesses</a>
+			<a href="Dog Health.html">Dog Health Care</a>
+			<a href="Dog Grooming.html">Dog Grooming</a>
+			<a href="Dog Toys.html">Dog Toys</a>
+			<a href="Dog Accessories.html">Dog Accessories</a>
+			<a href="Dog Hygiene.html">Dog Hygiene</a>			
+			<a href="Cat Food.html">Cat food</a>
+			<a href="Cat Treats.html">Cat Treats</a>
+			<a href="Cat Collars.html">Cat collars, leashes & Harnesses</a>
+			<a href="Cat Toys.html">Cat Toys</a>
+			<a href="Cat Grooming.html">Cat grooming</a>
+			<a href="Cat Accessories.html">Cat Accessories</a>
+			<a href="Cat Hygiene.html">Cat Hygiene</a>
+
+
+		</div>
+	</div> 
+
+	<div class="dropdown">
+		<p><b>Shop by Brand</b></p>
+		<div class="dropdown-content">
+			<a href = "Pedigree.html">Pedigree</a>
+			<a href="RC.html">Royal Canin</a>
+			<a href="Drools.html">Drools</a>
+			<a href="Farmina.html">Farmina</a>
+			<a href="Whiskas.html">Whiskas</a>
+			<a href="Meo.html">Me-O</a>
+			<a href="MPets.html">M-Pets</a>
+		</div>
+	</div>    
+	<div class="dropdown">
+        	<p><b>Shop By Medicine </b></p>
+        	<div class="dropdown-content" >
+            		<div>
+                		<strong>Digestive Care</strong>
+                		<a href="DCS.html">Syrup</a>
+                		<a href="DCF.html">Feed</a>
+            		</div>
+            	<div>
+                	<strong>Eye & Ear Care</strong>
+                	<a href="EECS.html">Syrup</a>
+                	<a href="EECD.html">Drops</a>
+            	</div>
+		<div>
+                	<strong>Skin Care</strong>
+                	<a href="SCS.html">Syrup</a>
+                	<a href="SCO.html">Ointment</a>
+
+            	</div>
+		<div>
+                	<strong>Wound Care</strong>
+                	<a href="WCS.html">Syrup</a>
+                	<a href="WCO.html">Ointment</a>
+			<a href="WCT.html">Tablet</a>
+                </div>
+        </div>
+    </div>
+    <a href="" class="login-btn">Book Appointment</a>
+</div>
+</div>
+
+<b><h2 class="center">The passion that took wings</h2></b>
+<p class="logo">While building his extraordinary business empire, CKR never forgot the one thing he loved and deeply cared about – His love of pets, feathered friends, and animals.<br><br>A passion that can be traced back to his youth, CKR was always fascinated with the idea of turning his childhood hobby of caring for pets, feathered friends, and animals into something more productive.<br><br>And so came about the professional team of Cavin International Pvt Ltd. – One of the most sought-after breeders of exotic birds.<br><br></p>
+
+<br><h2 class="center"> Cavin International Pvt Ltd<br><br>The Challenge that came unannounced<br></h2>
+<p class="logo">Today, having earned its standing based on expert medical methodology, ethical approach, and professionalism, Cavin International houses more than 2000 fascinating birds, two dozen canines, ponies,<br> and ostriches at two of its homesteads in Chennai and Cuddalore.<br><br>The homesteads additionally have a high-yielding bovine farm at Cuddalore where high-end research exercises are continued. Groundbreaking in its many animal science innovations, CavinKare has<br>consistently chosen the road less traveled and sought the highest distinction in the field.<br><br></p>
+
+<br><h2 class="center"> The light at the end of the tunnel<br><br></h2>
+<p class="logo">urmounting the challenges thrown at them repeatedly, the organization figured out a way of raising an initial amount of 50 lakhs (INR) and the rest over time.<br><br>Over a dozen researchers involving Veterinary Specialists, Bio-Scientific Experts, and Microbiologists put in their hardest efforts to put in place a scientific breakthrough in animal care that not only had a<br>widespread impact in the near term but in the long term as well the accurate diagnosis of the disease.<br><br></p>
+
+<br><h2 class="center"> The Why’s and How’s – The Roadmap<br><br></h2>
+<p class="logo">The extensive R&D exercise was aimed at unwinding the secrets of ‘how’ and ‘why’ the malady happened, and furthermore on the measures to control it.<br>What’s more, the belief system for everyone in the Group was to take a logical leap forward in understanding the unexpected nature of animal diseases and logically finding the panacea via research.<br><br>After executing a fruitful R&D methodology and conducting a detailed cross-examination of the infection, the team at Cavin International Pvt Ltd. inched nearer to a fix for the disease.<br><br></p>
+
+<br><h1 class="h1">Pets' Park - One-stop destination for all your pet’s needs<br><br></h1>
+<p class="logo">Are you on the hunt for the perfect veterinary hospital near me? Well, your search ends here.<br>We at Pets' Park believe in pet companionship and unconditional love more than anything else in the world. They are loyal to us and they deserve quality care for life<br><br>Your pet’s diet can make or break how it will live. They are dependent on you for a complete nutritious diet. Your pet will be healthier overall if you ensure to provide a proper and balanced diet. With mindful decisions, we have opened a pet store so that you can get quality pet foods.<br><br>When your pet is not healthy, it can’t spread peace and happiness too. Thus, their health should be your priority. We keep on taking feedback from the pet parents and use it as primary research to provide the best for all.<br><br>Why do pets require our care and attention? They make our world better, and they always spread happiness and optimism. By giving them the best health care, we are fulfilling our primary responsibility toward them<br><br>
+Every pet is different and needs special care and attention.  If you are a first-time pet owner, Pets' Park will guide you throughout your pet care journey. Our team of professionals ensures to provide the best solutions for your pet's needs. At Pets' Park, every first visit is the beginning of a long-term relationship.<br><br></p>
+</div>
+</body>
+</html>
