@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Pets' PArk - Login</title>
+    <style>
+        
+        body {
+	    background-color: lightpink;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            animation: gradientShift 10s infinite;
+        }
+
+       
+        @keyframes gradientShift {
+            50% { background-color: light-pink }
+        }
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+          
+        }
+
+        h1 {
+            text-align: center;
+            color: Red;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 36px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus {
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 10px #FFD700;
+        }
+
+        input[type="submit"] {
+            background-color: #D4AF37;
+            width: 200px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            align-item:center;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            animation: pulse 2s infinite;    
+        }
+
+        @keyframes pulse {
+            0% { background-color: #D4AF37; }
+            50% { background-color: #FFD700; }
+            100% { background-color: #D4AF37; }
+        }
+
+        input[type="submit"]:hover {
+            background-color: red;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+        }
+       
+        @media (max-width: 768px) {
+            .button {
+                padding: 10px 20px;
+                font-size: 16px;
+                transform: translate(-50%, 0); /* Adjust the button's position for phones */
+            }
+
+
+      </style>
+</head>
+<body>
+    <div id="star-container"></div>
+    <div class="box">
+        <form>
+            <h1>REGISTER</h1>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter valid e-mail id">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter a 6 digit password">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter a valid phone number">
+
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phonePattern = /^[0-9]{10}$/;
+
+            let errorMessage = '';
+
+            if (name === '') {
+                errorMessage += 'Name is required.\n';
+            }
+
+            if (!emailPattern.test(email)) {
+                errorMessage += 'Please enter a valid email address.\n';
+            }
+
+            if (password.length < 6) {
+                errorMessage += 'Password must be at least 6 characters long.\n';
+            }
+
+            if (!phonePattern.test(phone)) {
+                errorMessage += 'Please enter a valid 10-digit phone number.\n';
+            }
+
+            if (errorMessage) {
+                alert(errorMessage);
+            } else {
+                
+                window.location.href = "Pets ParkOriginal.html"; 
+            }
+        }
+    </script>
+</body>
+</html>
