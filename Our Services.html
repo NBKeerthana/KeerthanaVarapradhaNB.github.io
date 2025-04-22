@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Our Services - Pets' Park</title>
+	<style>
+		.header{
+		    display: flex;
+		    align-items: center;
+		    gap: 15px;
+		}
+		.search-container{
+		    position: relative;
+		    display: flex;
+		    align-items: center;
+		}
+		.search-bar{
+		    width: 720px;
+		    height: 30px;
+		    font-size: 16px;
+		    padding: 5px;
+		    margin-left: 80px;
+		    border: 1px solid gray;
+		    border-radius: 5px;
+		    background-color: #ffd6d4;
+		}
+		.search-icon{
+		    position: absolute;
+		    right: 10px;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    width: 20px;
+		    height: 20px;
+		    cursor: pointer;
+		}
+		.logo{
+		    margin-left: 100px;
+		}
+		.login-btn{
+		    background-color: #ffd6d4;
+		    color: white;
+		    font-size: 16px;
+		    padding: 8px 15px;
+		    border: none;
+		    border-radius: 5px;
+		    cursor: pointer;
+		    margin-left: 20px;
+		    transition: 0.3s ease;
+		}
+		.login-btn:hover{
+		    background-color: #ed1e24;
+		}
+		a:link{
+		    text-decoration: none;
+		}
+		a:visited{
+		    text-decoration: none;
+		}
+		a:hover{
+		    text-decoration: underline;
+		}
+		a:active{
+		    text-decoration: underline;
+		}
+		.menu {
+    		    display: flex;
+		    justify-content: space-around;
+		    align-items: center;
+    		    width: 100%;
+    		    padding: 10px 0;
+		}
+		.menu .login-btn{
+		    margin-left: 10px;
+		}
+		.dropdown{
+		    position: relative;
+		    display: inline-block;
+		    margin-left: 20px;
+		}
+		.dropdown-content{
+		    display: none;
+		    position: absolute;
+		    background-color: #f9f9f9;
+		    min-width: 160px;
+		    box-shodow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+		    padding: 12px 16px;
+		    z-index: 1;
+		}
+		.dropdown-content a{
+		    text-decoration: none;
+		    color: black;
+		    display: block;
+		    padding: 5px 0;
+		}
+		.dropdown:hover .dropdown-content{
+		    display: block;
+		}
+		.dropdown-content a:hover{
+		    display: block;
+		}
+		.dropdown-content a:hover{
+		    background-color: #ddd;
+		}
+		a.logo{
+		    text-decoration: none;
+		    font-weight: bold;
+		    color: black;
+		}
+		.menu {
+    		   display: flex;
+    		   justify-content: space-evenly;
+    		   align-items: center;
+    		   text-align: center;
+		}
+		.menu p, .menu .login-btn {
+    		   margin: 0;
+		}
+		.center {
+        		color: red;
+        		margin-top: 0px;
+    		}
+		.left{
+			margin-left: 300px;
+		}
+    		.h1{
+			margin-left: 100px;
+			margin-top: 40px;
+			color: red;
+		}
+		.h2{
+			margin-left: 100px;
+			margin-top: 40px;
+			color: black;
+		}
+		.p{
+			margin-left: 100px;
+		}
+		.h3{
+			margin-left: 100px;
+		}
+		.container {
+            		display: flex;
+            		justify-content: center;
+            		gap: 20px;
+            		padding: 20px;
+        	}
+        	.box {
+            		width: 650px;
+            		height: 100px;
+            		background-color: pink;
+            		border: 2px solid #ccc;
+            		display: flex;
+            		align-items: center;
+            		padding: 15px;
+            		font-family: Arial, sans-serif;
+            		font-size: 16px;
+            		color: #333;
+            		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            		border-radius: 8px;
+        	}
+        	.box img {
+            		width: 60px;
+            		height: auto;
+            		margin-right: 15px;
+        	}
+        	.content h2 {
+            		color: red;
+            		margin: 0;
+        	}
+        	.content p {
+            		margin: 5px 0 0;
+        	}
+		.card-container {
+    			display: flex;
+    			justify-content: center;
+    			gap: 20px;
+    			padding: 20px;
+		}
+		.card {
+    			width: 650px;
+    			height: 100px;
+    			background-color: #fff;
+    			border: 2px solid #ccc;
+    			display: flex;
+    			align-items: center;
+    			padding: 15px;
+    			font-family: Arial, sans-serif;
+    			font-size: 16px;
+    			color: #333;
+    			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    			border-radius: 8px;
+		}
+		.card-image {
+    			width: 60px; /* Adjust image size */
+    			height: auto;
+    			margin-right: 15px;
+		}
+		.card-content h2 {
+    			color: #007bff;
+    			margin: 0;
+		}
+		.card-content p {
+    			margin: 5px 0 0;
+		}
+		.tab {
+            		background-color: lightpink;
+            		color: white;
+            		padding: 20px;
+            		font-size: 36px;
+            		margin-bottom: 20px;
+        	}
+
+	</style>
+</head>
+<body>
+   <div class="header">
+	<a href = "Pets ParkOriginal.html"><embed type = "image/png" src = "Logo.png" class = "logo" width = "150" height = "150"></a>
+	<div class = "search-container">
+		<input type = "text" class = "search-bar" placeholder = "Search by pet, breed, product...">
+		<img src = "search.png" alt = "Search" class="search-icon">
+	</div>
+
+	<a href = "Cart - Pets' Park.html"><img border="0" alt = "Cart" src = "cart.png" width ="100" height = "100"></a>
+
+	<a href = "Login.html" class = "login-btn">Sign Up/Login</a>
+
+   </div>
+
+   <div class="menu">
+	<p><b><a href = "Our Services.html" target="_blank" class="logo">Our Services</a></b></p>
+
+	<div class="dropdown">
+		<p><b>Shop by Breed</b></p>
+		<div class="dropdown-content">
+			<a href = "Dog Food.html">Dog Food</a>
+			<a href="Dog Treat.html">Dog Treats, biscuits and chews</a>
+			<a href="Dog Collars.html">Dog Collars, leashes, & harnesses</a>
+			<a href="Dog Health.html">Dog Health Care</a>
+			<a href="Dog Grooming.html">Dog Grooming</a>
+			<a href="Dog Toys.html">Dog Toys</a>
+			<a href="Dog Accessories.html">Dog Accessories</a>
+			<a href="Dog Hygiene.html">Dog Hygiene</a>			
+			<a href="Cat Food.html">Cat food</a>
+			<a href="Cat Treats.html">Cat Treats</a>
+			<a href="Cat Collars.html">Cat collars, leashes & Harnesses</a>
+			<a href="Cat Toys.html">Cat Toys</a>
+			<a href="Cat Grooming.html">Cat grooming</a>
+			<a href="Cat Accessories.html">Cat Accessories</a>
+			<a href="Cat Hygiene.html">Cat Hygiene</a>
+
+
+		</div>
+	</div> 
+
+	<div class="dropdown">
+		<p><b>Shop by Brand</b></p>
+		<div class="dropdown-content">
+			<a href = "Pedigree.html">Pedigree</a>
+			<a href="RC.html">Royal Canin</a>
+			<a href="Drools.html">Drools</a>
+			<a href="Farmina.html">Farmina</a>
+			<a href="Whiskas.html">Whiskas</a>
+			<a href="Meo.html">Me-O</a>
+			<a href="MPets.html">M-Pets</a>
+		</div>
+	</div>    
+	<div class="dropdown">
+        	<p><b>Shop By Medicine </b></p>
+        	<div class="dropdown-content" >
+            		<div>
+                		<strong>Digestive Care</strong>
+                		<a href="DCS.html">Syrup</a>
+                		<a href="DCF.html">Feed</a>
+            		</div>
+            	<div>
+                	<strong>Eye & Ear Care</strong>
+                	<a href="EECS.html">Syrup</a>
+                	<a href="EECD.html">Drops</a>
+            	</div>
+		<div>
+                	<strong>Skin Care</strong>
+                	<a href="SCS.html">Syrup</a>
+                	<a href="SCO.html">Ointment</a>
+
+            	</div>
+		<div>
+                	<strong>Wound Care</strong>
+                	<a href="WCS.html">Syrup</a>
+                	<a href="WCO.html">Ointment</a>
+			<a href="WCT.html">Tablet</a>
+                </div>
+        </div>
+    </div>
+    <a href="BookAppointment.html" class="login-btn">Book Appointment</a>
+</div>
+</div>
+
+
+<img src = "os.png" alt = "Our service towards animals" class = "logo" width = "1300" height = "250"> 
+
+
+<h3 class="logo">Home/Service</h3> 
+<h1 class="logo">SERVICES</h1>
+
+<div class="container">
+        <div class="box">
+            <img src="inpatient.png" alt="Inpatient Service">
+            <div class="content">
+                <h2>In-patient</h2>
+                <p>Backed by a team of specialist veterinarians and para-vets, our 24x7 inpatient pet facility is enriched with state-of-the-art OTs, laboratories, and every medical, diagnostic, and surgical procedure needed to keep your pet healthy.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="outpatient.png" alt="Outpatient Service">
+            <div class="content">
+                <h2>Outpatient</h2>
+                <p>Personalizes medication from your pet health.</p>
+            </div>
+        </div>
+</div>
+
+<div class="container">
+        <div class="box">
+            <img src="pharmacy.png" alt="Pharmacy Service">
+            <div class="content">
+                <h2>Pharmacy</h2>
+                <p>Pet's with prescription needs, pharmacy.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="supermarket.png" alt="Supermarket Service">
+            <div class="content">
+                <h2>Pet Supermarket</h2>
+                <p>Everything your pet needs.</p>
+            </div>
+        </div>
+</div>
+
+<div class="container">
+        <div class="box">
+            <img src="salon.png" alt="Salon and Spa Service">
+            <div class="content">
+                <h2>Pet Salon & Spa</h2>
+                <p>Unleash your pet's beauty.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="boarding.png" alt="Boarding Service">
+            <div class="content">
+                <h2>Boarding for birds, cat and dogs</h2>
+                <p>Your pet's happy place while you are away. Safe, fun and care boarding spot 24x7.</p>
+            </div>
+        </div>
+</div>
+
+<div class="container">
+        <div class="box">
+            <img src="laboratory.png" alt="In-house Laboratory Service">
+            <div class="content">
+                <h2>In-house Laboratory</h2>
+                <p>Accurate Diagnostics for your pet's optimal health.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="emergency.png" alt="Emergency Critical Care Service">
+            <div class="content">
+                <h2>Emergency Critical Care Unit</h2>
+                <p>24x7 complete care for your pets, any time.</p>
+            </div>
+        </div>
+</div>
+
+<div class="container">
+        <div class="box">
+            <img src="monitoring.png" alt="Monitoring Service">
+            <div class="content">
+                <h2>Monitoring Pet's Health</h2>
+                <p>We have a wide range of equipments to test and monitor your pet's health regularly. You can reach us for any health imbalances and emergencies.</p>
+            </div>
+        </div>
+</div>
+
+
+</div>
+
+<h1 class = "h1">Why choose Us?</h1>
+<b><h2 class = "h2"> Experienced Vets</h2></b>
+<p class="p">Nothing substitutes in a veterinary hospital than having experienced veterinarians. Having skilled and experienced veterinarians will diagnose your pet and ensure that he or she will always get the best care. Also, their<br>experience will come in handy while calming your pets when at a clinic or hospital.</p>
+
+<b><h2 class = "h2">Friendly Staff</h2></b>
+<p class="p">Friendly staffs are the second factor that sets a hi-tech veterinary hospital different from normal veterinary hospitals. All the knowledge, labs, technology and types of equipment, and passion wouldn’t do any good if the staff<br>at the hospital does not treat your pets well. The staff of a hi-tech hospital ensures that the pets have a comfortable stay and feel at home to speed up their recovery process. The right hospital will always strive to put your pet at<br>ease. From the moment you step foot into the hospital building, you’ll be greeted with a smile and your pet will feel loved.</p>
+
+<b><h2 class = "h2">Flexible Hours</h2></b>
+<p class="p">This is something that every pet parent has experienced at least once in their lifetime. When you make the decision to parent a pet, sometimes unpleasant situations and emergencies arise and you will have to rush to a veterinary<br>hospital near you at odd hours. An ideal hospital should be able to accommodate you and your pet any time of the day and not force you to accommodate your pet at their timing. Look for a hospital that has fully-equipped<br>emergency centers and critical care units that are open round-the -clock for any type of assistance. Also, make sure to enquire about the availability of the team to look after the pet during emergency conditions.</p>
+
+<b><h2 class = "h2">Avant-garde Technologies</h2></b>
+<p class="p">This goes without saying that hospitals must have the latest technology and types of equipment to support their treatment and to be able to diagnose medical conditions at an early stage. Along with comfort and home-like<br>environment pet parents also need hospitals equipped with all such technology that will further add to the early recovery of pets.</p>
+
+<b><h2 class = "h2">The Services</h2></b>
+<p class="p">Many veterinary hospitals offer additional services apart from just veterinary care. You can go through an animal hospital’s website and get an idea of any additional services offered by them. If you are someone who travels<br>frequently, you will have to consider boarding arrangements and at times such as this, trusting your regular animal clinic is ideal. As your pet is already familiar with them and their processes, they can get adjusted easily. The goal<br>here is to find a place that offers the services that your pet needs and also fits your lifestyle.</p>
+
+<b><h2 class = "h2">Proximity</h2></b>
+<p class="p">Picking a veterinary hospital that you can trust is the primary requirement but also it must be easily accessible in case of emergencies. Having a clinic close to where you work or your home that also offers other services is highly<br>recommended mostly by all. Pets Park has a solution for this as well. It has its centers in the major part of the city.</p>
+
+<b><h2 class = "h2">Price</h2></b>
+<p class="p">Lastly, you will have to find a veterinary hospital that also works within your budget. Some things to consider before picking any is the price of vaccinations, regular exams, and visits, whether or not there are any discounts, offers.</p>
+
+<h3 class="h3">Pets Park is a one-stop destination for all your pet’s needs. Along with providing veterinary services it also has grooming, boarding services. Additionally, its in-house pharmacy & Pet<br>Supermarket allows pet parents to shop the needful. Pets Park for your pet’s health-related concerns. It has a fully equipped Critical Care Unit, echocardiography, advanced laboratory,<br>computer radiography, AC/Non AC rooms, etc.</h3>
+
+<div class="card-container">
+    <div class="card">
+        <img src="tech.png" alt="Hi Tech Hospital" class="card-image">
+        <div class="card-content">
+            <h2>Hi Tech Hospital</h2>
+            <p>With the most advanced equipment and technologies for end-to-end services, including preventive healthcare, treatment, and diagnostics for pets.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="skilled.png" alt="Skilled Vets" class="card-image">
+        <div class="card-content">
+            <h2>Skilled Vets</h2>
+            <p>We have highly qualified doctors and researchers who will diagnose your pet and ensure they receive the best care.</p>
+        </div>
+    </div>
+</div>
+
+<div class="card-container">
+    <div class="card">
+        <img src="24-7.png" alt="24/7 Support" class="card-image">
+        <div class="card-content">
+            <h2>24/7 Support</h2>
+            <p>Fully-equipped emergency centers and critical care units that are open round-the-clock for any type of assistance.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="affordable2.png" alt="Affordable" class="card-image">
+        <div class="card-content">
+            <h2>Affordable</h2>
+            <p>One stop destination for all your pets need within your budget.</p>
+        </div>
+    </div>
+</div>
+
+<h1 class="tab">We are happy to take care of your pets. For more clarrification call us or email us.<a href = "https://sanchuanimalhospital.com/content/contact-us"><img src="enquire.png" alt = "ENQUIRE" width = "50" hegiht = "50" class="left"></a></h1>
+
+</body>
+</html>
